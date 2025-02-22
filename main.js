@@ -1,17 +1,34 @@
-function tally(arr) {
+function tally(arr, type) {
     let total = 0;
     for (let i = 0; i < arr.length; i++){
-        total += arr[i].amount
+        if (type == arr[i].type) {
+            total += arr[i].amount
+        }
     }
     return total
 }
 
+function displayTable() {
+    
 
-let income = [{description: 'Random 1', amount: 24}, {description: 'Random 2', amount: 30}, {description: 'Random 3', amount: 40}]
-let expenses = [{description: 'Expense 1', amount: 14}, {description: 'Expense 2', amount: 24}, {description: 'Expense 3', amount: 24}]
+}
 
-let totalExpenses = tally(expenses)
-let totalIncome = tally(income)
+function openModal() {
+
+}
+
+function closeModal() {
+
+}
+
+
+let transactions = [{type: 'income', description: 'Random 1', amount: 2000}, {type: 'income', description: 'Random 2', amount: 3000}, {type: 'income', description: 'Random 3', amount: 4000},
+    {type: 'expense', description: 'Expense 1', amount: 1000}, {type: 'expense', description: 'Expense 2', amount: 2400}, {type: 'expense', description: 'Expense 3', amount: 2400}]
+
+let totalIncome = tally(transactions, 'income')
+let totalExpenses = tally(transactions, 'expense')
 let balance = totalIncome - totalExpenses
 
-console.log(totalIncome, totalExpenses, balance)
+document.getElementById('balance').innerHTML = balance.toLocaleString('en')
+document.getElementById('total-income').innerHTML = totalIncome.toLocaleString('en')
+document.getElementById('total-expenses').innerHTML = totalExpenses.toLocaleString('en')

@@ -7,40 +7,73 @@
 </head>
 <body>
     <main>
+        <!-- Section with summary numbers: balance, income, expenses -->
         <div class="wrapper">
             <h1>Budget Tracker</h1>
             <p>Track your income and expenses below</p>
         </div>
         <div class="wrapper">
-            <div class="card">
-                <p>$<span id="balance">1,000</span></p>
+            <div class="card flex flex-direction-column">
+                <p>$<span id="balance">1000</span></p>
                 <p>Ledger Balance</p>
             </div>
-            <div class="card">
-                <p>$<span id="total-income">3,000</span></p>
+            <div class="card flex flex-direction-column">
+                <p>$<span id="total-income">3000</span></p>
                 <p>Total Income</p>
             </div>
-            <div class="card">
-                <p>$<span id="total-expenses">2,000</span></p>
+            <div class="card flex flex-direction-column">
+                <p>$<span id="total-expenses">2000</span></p>
                 <p>Total Expenses</p>
             </div>
         </div>
+        <!-- Section with transaction table and add transaction form -->
         <div class="wrapper">
-            <div>
-                <h2>Income</h2>
-                <form action="submit" method="post">
-                    <input type="text" name="income-description" id="income-description" placeholder="Describe source of income">
-                    <input type="number" name="income-amount" id="income-amount" placeholder="Enter the amount">
-                    <button type="submit">Add Income Line</button>
-                </form>
-            </div>
-            <div>
-                <h2>Expenses</h2>
-                <form action="submit" method="post">
-                    <input type="text" name="expense-description" id="expense-description" placeholder="Describe source of expense">
-                    <input type="number" name="income-amount" id="expense-amount" placeholder="Enter the amount">
-                    <button type="submit">Add Expense Line</button>
-                </form>
+            <div class="flex flex-direction-column">
+                <div class="flex">
+                    <h2>All Transactions</h2>
+                    <button>New Transaction</button>
+                </div>
+                <!-- Modal with form for adding transactions -->
+                <div class="modal">
+                    <form action="submit" method="post" class="flex flex-direction-column">
+                        <label for="type">
+                            Transaction Type<br>
+                            <select name="type" id="type" required>
+                                <option value="">--Select one of --</option>
+                                <option value="expense">Expense</option>
+                                <option value="income">Income</option>
+                            </select>
+                        </label>
+                        <label for="description">
+                            Description<br>
+                            <input type="text" name="description" id="description" placeholder="e.g. Transport expense">
+                        </label>
+                        <label for="amount">
+                            Amount<br>
+                            <input type="number" name="amount" id="amount" placeholder="1,000">
+                        </label>
+                        <button type="submit" class="full-width">Submit Transaction</button>
+                    </form>
+                </div>
+                <!-- Table of transactions i.e. expenses and income -->
+                <div>
+                    <table id="transactions">
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Expense</td>
+                            <td>Random 1</td>
+                            <td>3,000</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
