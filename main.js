@@ -10,21 +10,21 @@ function tally(arr, type) {
 
 function displayTable(transactions) {
     const transactionTable = document.getElementById('transactions')
-    tableContent = `<tr>\n<th>ID</th>\n<th>Type</th>\n<th>Description</th>\n<th>Amount</th>\n<th>Action</th>\n</tr>\n`
+    tableContent = `<tr>\n<th></th>\n<th scope="col">Type</th>\n<th scope="col">Description</th>\n<th scope="col">Amount</th>\n<th scope="col">Action</th>\n</tr>\n`
     
     for (let i = 0; i < transactions.length; i++){
-        tableContent += `<tr>\n<td>##</td>\n<td>${transactions[i].type}</td>\n<td>${transactions[i].description}</td>\n<td>${transactions[i].amount}</td>\n
-        <td><button type="submit" onclick="deleteTransaction()">Delete</button></td>\n</tr>\n`
+        tableContent += `<tr>\n<td>${transactions[i].id}</td>\n<td>${transactions[i].type}</td>\n<td>${transactions[i].description}</td>\n<td>${transactions[i].amount.toLocaleString('en')}</td>\n
+        <td><button type="submit" onclick="deleteTransaction()" class="btn-danger">Delete</button></td>\n</tr>\n`
     }
     transactionTable.innerHTML = tableContent
 }
 
-function addTransaction() {
-
+function addTransaction(transactions) {
+    displayTable(transactions)
 }
 
-function deleteTransaction() {
-
+function deleteTransaction(transactions) {
+    displayTable(transactions)
 }
 
 function openModal() {
@@ -36,8 +36,8 @@ function closeModal() {
 }
 
 
-let transactions = [{type: 'income', description: 'Random 1', amount: 2000}, {type: 'income', description: 'Random 2', amount: 3000}, {type: 'income', description: 'Random 3', amount: 4000},
-    {type: 'expense', description: 'Expense 1', amount: 1000}, {type: 'expense', description: 'Expense 2', amount: 2400}, {type: 'expense', description: 'Expense 3', amount: 2400}]
+let transactions = [{id:1, type: 'income', description: 'Random 1', amount: 2000}, {id:2, type: 'income', description: 'Random 2', amount: 3000}, {id:3, type: 'income', description: 'Random 3', amount: 4000},
+    {id:4, type: 'expense', description: 'Expense 1', amount: 1000}, {id:5, type: 'expense', description: 'Expense 2', amount: 2400}, {id:6, type: 'expense', description: 'Expense 3', amount: 2400}]
 
 let totalIncome = tally(transactions, 'income')
 let totalExpenses = tally(transactions, 'expense')
