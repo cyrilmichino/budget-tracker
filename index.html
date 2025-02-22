@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <h1>Budget Tracker</h1>
+            <p>Track your income and expenses below</p>
+        </div>
+        <div class="wrapper">
+            <div class="card">
+                <p>$<span id="balance">1,000</span></p>
+                <p>Ledger Balance</p>
+            </div>
+            <div class="card">
+                <p>$<span id="total-income">3,000</span></p>
+                <p>Total Income</p>
+            </div>
+            <div class="card">
+                <p>$<span id="total-expenses">2,000</span></p>
+                <p>Total Expenses</p>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div>
+                <h2>Income</h2>
+                <form action="submit" method="post">
+                    <input type="text" name="income-description" id="income-description" placeholder="Describe source of income">
+                    <input type="number" name="income-amount" id="income-amount" placeholder="Enter the amount">
+                    <button type="submit">Add Income Line</button>
+                </form>
+            </div>
+            <div>
+                <h2>Expenses</h2>
+                <form action="submit" method="post">
+                    <input type="text" name="expense-description" id="expense-description" placeholder="Describe source of expense">
+                    <input type="number" name="income-amount" id="expense-amount" placeholder="Enter the amount">
+                    <button type="submit">Add Expense Line</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="main.js" defer></script>
+</body>
+</html>
