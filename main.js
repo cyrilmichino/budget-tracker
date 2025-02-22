@@ -8,10 +8,23 @@ function tally(arr, type) {
     return total
 }
 
-function displayTable() {
+function displayTable(transactions) {
     const transactionTable = document.getElementById('transactions')
-    transactionTable.innerHTML = '
-    '
+    tableContent = `<tr>\n<th>ID</th>\n<th>Type</th>\n<th>Description</th>\n<th>Amount</th>\n<th>Action</th>\n</tr>\n`
+    
+    for (let i = 0; i < transactions.length; i++){
+        tableContent += `<tr>\n<td>##</td>\n<td>${transactions[i].type}</td>\n<td>${transactions[i].description}</td>\n<td>${transactions[i].amount}</td>\n
+        <td><button type="submit" onclick="deleteTransaction()">Delete</button></td>\n</tr>\n`
+    }
+    transactionTable.innerHTML = tableContent
+}
+
+function addTransaction() {
+
+}
+
+function deleteTransaction() {
+
 }
 
 function openModal() {
@@ -33,3 +46,5 @@ let balance = totalIncome - totalExpenses
 document.getElementById('balance').innerHTML = balance.toLocaleString('en')
 document.getElementById('total-income').innerHTML = totalIncome.toLocaleString('en')
 document.getElementById('total-expenses').innerHTML = totalExpenses.toLocaleString('en')
+
+displayTable(transactions)
