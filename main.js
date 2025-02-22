@@ -9,8 +9,9 @@ function tally(arr, type) {
 }
 
 function displayTable() {
-    
-
+    const transactionTable = document.getElementById('transactions')
+    transactionTable.innerHTML = '
+    '
 }
 
 function openModal() {
