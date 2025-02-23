@@ -16,7 +16,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
                     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
             </button>
-            <a href="#summary">Budget Summary</a>
+            <a href="#dashboard">Dashboard</a>
             <a href="#transaction">View Transactions</a>
             <button type="button" onclick="openModal()">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
@@ -31,30 +31,32 @@
     </header>
     <main>
         <!-- Section with summary numbers: balance, income, expenses -->
-        <div id="banner" class="wrapper flex flex-direction-column space-evenly-small centered">
-            <h1>Budget Tracker</h1>
-            <p>Track your income and expenses below</p>
-        </div>
+         <div class="wrapper">
+            <div id="banner" class="flex flex-direction-column space-evenly-small centered">
+                <h1>My Budget Tracker</h1>
+                <p>Your financial accountability buddy. Track your <b>income</b>, <b>expenses</b>, and <b>savings</b>.</p>
+            </div>
+         </div>
         <div id="summary" class="wrapper grid four-column">
             <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Balance</h2>
                 <p class="text-dark"><b>KES</b> <span class="text-large" id="balance">1000</span></p>
-                <p class="text-light text-smallest">What balance is left across your accounts</p>
+                <p class="text-light text-smallest">Total balance across your accounts</p>
             </div>
             <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Income</h2>
                 <p class="text-dark"><b>KES</b> <span class="text-large" id="total-income">3000</span></p>
-                <p class="text-light text-smallest">How much you have earned as income</p>
+                <p class="text-light text-smallest">How much you have earned</p>
             </div>
             <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Expenses</h2>
                 <p class="text-dark"><b>KES</b> <span class="text-large" id="total-expenses">2000</span></p>
-                <p class="text-light text-smallest">How much you have spent as expenses</p>
+                <p class="text-light text-smallest">How much you have spent</p>
             </div>
             <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Savings</h2>
                 <p class="text-dark"><b>KES</b> <span class="text-large" id="total-savings">2,000</span></p>
-                <p class="text-light text-smallest">How much do you have in savings</p>
+                <p class="text-light text-smallest">Total balance in your savings</p>
             </div>
         </div>
         <!-- Section with transaction table and add transaction form -->
@@ -74,7 +76,8 @@
                     </div>
                 </div>
                 <!-- Modal with form for adding transactions -->
-                <div class="modal rounded-10">
+                <div class="card modal rounded-10">
+                    <h3>Add New Transaction</h3>
                     <form action="submit" method="post" class="flex flex-direction-column">
                         <label for="type" class="full-width">
                             Transaction Type<br>

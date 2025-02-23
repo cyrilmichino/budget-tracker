@@ -198,8 +198,7 @@ tr:nth-child(1) {
 .wrapper {
     display: block;
     padding-inline: 1rem;
-    padding-block: 2rem;
-    min-width: 100%;
+    padding-block: 1rem;
     max-width: min(100%,90em);
     margin: auto;
   }
@@ -308,3 +307,47 @@ tr:nth-child(1) {
         display: none;
     }
   }
+
+/** Project Components **/
+
+/* Bordered cards for grids */
+.card {
+    border: 1px solid var(--clr-neutral-400);
+    border-radius: 10px;
+    padding: 1rem;
+}
+/* Pop-up modal */
+.modal {
+    background-color: var(--clr-neutral-100);
+    max-width: 40em;
+}
+/* Banner card with image background */
+#banner {
+    border-radius: 20px;
+    /* background-image: url("assets/coinjar.webp"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--clr-neutral-700);
+    padding-block: 2rem;
+    margin-top: 1rem;
+    min-height: 200px;
+}
+#banner h1, p {
+    color: var(--clr-neutral-100);
+}
+
+/* Header and Responsive Navigation */
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--clr-neutral-100);
+    border-bottom: 1px solid var(--clr-neutral-400);
+    padding-block: 1rem;
+    padding-inline: 1rem;
+}
+header a {
+    color: var(--clr-neutral-600);
+}
+header a:hover {
+    color: var(--clr-primary);
+}
