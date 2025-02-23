@@ -3,7 +3,7 @@
     --clr-transparent: hsla(100%, 100%, 100%, 0);
     --clr-neutral-100: #ffffff;
     --clr-neutral-200: #f6f6f6;
-    --clr-neutral-300: #e5e5e5;
+    --clr-neutral-300: #e2eef3;
     --clr-neutral-400: #d3d3d3;
     --clr-neutral-500: #7c7c7c;
     --clr-neutral-600: #3a3a3a;
@@ -38,7 +38,7 @@
     }
   }
 
-/* CSS Reset Code and Base Theme*/
+/** CSS Reset and Base Theme **/
 
 /* Use a more-intuitive box-sizing model */
 *, *::before, *::after {
@@ -63,6 +63,7 @@ p, h1, h2, h3, h4, h5, h6 {
     hyphens: auto;
 }
 h1, h2, h3, h4, h5, h6 {
+    color: var(--clr-neutral-700);
     font-family: var(--ff-heading);
     font-weight: var(--fw-medium);
     text-wrap: balance;
@@ -113,6 +114,8 @@ button {
     color: var(--clr-neutral-100);
     border-radius: 5px;
     display: flex;
+    align-items: center;
+    justify-content: center;
     padding-inline: 2rem;
     padding-block: 0.1rem;
 }
@@ -136,15 +139,114 @@ table {
     border-radius: 10px;
 }
 th, td {
-    padding-inline: 2rem;
+    padding-inline: 0.5rem;
     padding-block: 0.1rem;
     text-align: left;
+}
+  @media (min-width: 40em) {
+    th, td {
+        padding-inline: 1rem;
+    }
+  }
+  @media (min-width: 50em) {
+    th, td {
+        padding-inline: 2rem;
+    }
+  }
+tr:nth-child(odd) {
+    background-color: var(--clr-neutral-300);
 }
 tr:nth-child(1) {
     background-color: var(--clr-neutral-700);
     border: 1px solid var(--clr-neutral-700);
     color: var(--clr-neutral-100);
 }
-tr:nth-child(even) {
-    background-color: var(--clr-neutral-200);
+
+/** Utility Classes **/
+
+/* Button Variations */
+.btn-outline {
+    background-color: var(--clr-transparent);
+    color: var(--clr-primary);
+}
+.btn-outline:hover {
+    color: var(--clr-neutral-100);
+}
+.btn-no-outline {
+    background-color: var(--clr-transparent);
+    color: var(--clr-neutral-600);
+    border: 0;
+    padding: 0.2rem;
+}
+.btn-no-outline:hover {
+    background-color: var(--clr-transparent);
+    color: var(--clr-primary);
+}
+.btn-danger {
+    background-color: var(--clr-transparent);
+    border: 2px solid crimson;
+    color: crimson;
+}
+.btn-danger:hover {
+    background-color: crimson;
+    border-color: crimson;
+    color: var(--clr-neutral-100);
+}
+
+/* Container wrapper for all page sections */
+.wrapper {
+    display: block;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+    max-width: min(100%,90em);
+    margin: auto;
+  }
+  @media (min-width: 50em) {
+    .wrapper {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 70em) {
+    .wrapper {
+      padding-inline: 5rem;
+    }
+  }
+/* Rounded border radius for div */
+.rounded-10 {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.allow-overflow {
+    overflow-x:auto;
+    overflow-y: auto;
+}
+/* Full width div*/
+.full-width {
+    width: 100%;
+}
+/* Text utility classes */
+.text-largest {
+    font-size: var(--fs-900);
+    font-weight: var(--fw-bold);
+}
+.text-large {
+    font-size: var(--fs-800);
+    font-weight: var(--fw-semi-bold);
+}
+.text-small {
+    font-size: var(--fs-500);
+    font-weight: var(--fw-medium);
+}
+.text-smallest {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-regular);
+}
+.text-dark {
+    color: var(--clr-neutral-700);
+}
+.text-accent {
+    color: var(--clr-primary);
+}
+.text-light {
+    color: var(--clr-neutral-500);
 }

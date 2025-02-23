@@ -37,16 +37,19 @@
         </div>
         <div id="summary" class="wrapper">
             <div class="card flex flex-direction-column">
-                <p>KES<span id="balance">1000</span></p>
-                <p>Ledger Balance</p>
+                <h2 class="text-small text-accent">Balance</h2>
+                <p class="text-dark"><b>KES</b> <span class="text-large" id="balance">1000</span></p>
+                <p class="text-light text-smallest">What balance is left across your accounts</p>
             </div>
             <div class="card flex flex-direction-column">
-                <p>KES<span id="total-income">3000</span></p>
-                <p>Total Income</p>
+                <h2 class="text-small text-accent">Income</h2>
+                <p class="text-dark"><b>KES</b> <span class="text-large" id="total-income">3000</span></p>
+                <p class="text-light text-smallest">How much you have earned as income</p>
             </div>
             <div class="card flex flex-direction-column">
-                <p>KES<span id="total-expenses">2000</span></p>
-                <p>Total Expenses</p>
+                <h2 class="text-small text-accent">Expenses</h2>
+                <p class="text-dark"><b>KES</b> <span class="text-large" id="total-expenses">2000</span></p>
+                <p class="text-light text-smallest">How much you have spent as expenses</p>
             </div>
         </div>
         <!-- Section with transaction table and add transaction form -->
@@ -66,29 +69,29 @@
                     </div>
                 </div>
                 <!-- Modal with form for adding transactions -->
-                <div class="modal">
+                <div class="modal rounded-10">
                     <form action="submit" method="post" class="flex flex-direction-column">
-                        <label for="type">
+                        <label for="type" class="full-width">
                             Transaction Type<br>
-                            <select name="type" id="type" required>
+                            <select name="type" id="type" class="full-width" required>
                                 <option value="">--Select one of --</option>
                                 <option value="expense">Expense</option>
                                 <option value="income">Income</option>
                             </select>
                         </label>
-                        <label for="description">
+                        <label for="description" class="full-width">
                             Description<br>
-                            <input type="text" name="description" id="description" placeholder="e.g. Transport expense">
+                            <input type="text" name="description" id="description" class="full-width" placeholder="e.g. Transport expense">
                         </label>
-                        <label for="amount">
+                        <label for="amount" class="full-width">
                             Amount<br>
-                            <input type="number" name="amount" id="amount" placeholder="1,000" required>
+                            <input type="number" name="amount" id="amount" class="full-width" placeholder="1,000" required>
                         </label>
                         <button type="button" class="full-width" onclick="addTransaction()">Submit Transaction</button>
                     </form>
                 </div>
                 <!-- Table of transactions i.e. expenses and income -->
-                <div>
+                <div class="rounded-10 allow-overflow">
                     <table id="transactions">
                     </table>
                 </div>
