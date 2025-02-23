@@ -333,9 +333,11 @@ header a:hover {
 .hide {
     display: none;
 }
-.hide-mobile {
-    display: none;
-}
+  @media (max-width: 50em) {
+    .hide-mobile {
+        display: none;
+    }
+  }
   @media (min-width: 50em) {
     .hide-desktop {
         display: none;
@@ -351,9 +353,15 @@ header a:hover {
     padding: 1rem;
 }
 /* Pop-up modal */
-.modal {
+#modal {
     background-color: var(--clr-neutral-100);
     max-width: 40em;
+    position: fixed;
+    margin: auto;
+    top: 150;
+    right: 0;
+    left: 0;
+    display: none;
 }
 /* Banner card with image background */
 #banner {
