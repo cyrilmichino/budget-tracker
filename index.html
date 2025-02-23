@@ -31,33 +31,38 @@
     </header>
     <main>
         <!-- Section with summary numbers: balance, income, expenses -->
-        <div id="banner" class="wrapper">
+        <div id="banner" class="wrapper flex flex-direction-column space-evenly-small centered">
             <h1>Budget Tracker</h1>
             <p>Track your income and expenses below</p>
         </div>
-        <div id="summary" class="wrapper">
-            <div class="card flex flex-direction-column">
+        <div id="summary" class="wrapper grid four-column">
+            <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Balance</h2>
                 <p class="text-dark"><b>KES</b> <span class="text-large" id="balance">1000</span></p>
                 <p class="text-light text-smallest">What balance is left across your accounts</p>
             </div>
-            <div class="card flex flex-direction-column">
+            <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Income</h2>
                 <p class="text-dark"><b>KES</b> <span class="text-large" id="total-income">3000</span></p>
                 <p class="text-light text-smallest">How much you have earned as income</p>
             </div>
-            <div class="card flex flex-direction-column">
+            <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Expenses</h2>
                 <p class="text-dark"><b>KES</b> <span class="text-large" id="total-expenses">2000</span></p>
                 <p class="text-light text-smallest">How much you have spent as expenses</p>
+            </div>
+            <div class="card flex flex-direction-column space-evenly-small">
+                <h2 class="text-small text-accent">Savings</h2>
+                <p class="text-dark"><b>KES</b> <span class="text-large" id="total-savings">2,000</span></p>
+                <p class="text-light text-smallest">How much do you have in savings</p>
             </div>
         </div>
         <!-- Section with transaction table and add transaction form -->
         <div class="wrapper">
             <div class="flex flex-direction-column">
-                <div class="flex">
-                    <h2>All Transactions</h2>
-                    <div>
+                <div class="flex space-between">
+                    <h2 class="text-small space-between">View all transactions:</h2>
+                    <div class="flex">
                         <button type="button" class="btn-no-outline" onclick="filterTable()">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
                                 <path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z"/></svg>
