@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Budget Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -50,9 +50,9 @@
                         </label>
                         <label for="amount">
                             Amount<br>
-                            <input type="number" name="amount" id="amount" placeholder="1,000">
+                            <input type="number" name="amount" id="amount" placeholder="1,000" required>
                         </label>
-                        <button type="submit" class="full-width">Submit Transaction</button>
+                        <button type="button" class="full-width" onclick="addTransaction()">Submit Transaction</button>
                     </form>
                 </div>
                 <!-- Table of transactions i.e. expenses and income -->

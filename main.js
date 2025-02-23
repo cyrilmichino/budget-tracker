@@ -19,7 +19,27 @@ function displayTable(transactions) {
     transactionTable.innerHTML = tableContent
 }
 
-function addTransaction(transactions) {
+function addTransaction() {
+    // Get form input elements
+    const inputType = document.getElementById('type')
+    const inputDescription = document.getElementById('description')
+    const inputAmount = document.getElementById('amount')
+
+    // Get form values from form input
+    const type = inputType.value
+    const description = inputDescription.value
+    const amount = inputAmount.value
+
+    // Tabulate transaction ID and add form data to array
+    const id = transactions[transactions.length - 1].id + 1
+    transactions.push({id:id,type:type,description:description,amount:amount})
+
+    // Reset form values (Make them empty)
+    inputType.value = ""
+    inputDescription.value = ""
+    inputAmount.value = ""
+
+    // Refresh the transactions table
     displayTable(transactions)
 }
 
