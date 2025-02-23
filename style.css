@@ -283,6 +283,7 @@ header a:hover {
         padding: 2rem;
         min-width: min(100%, 300px);
         min-height: 100vh;
+        z-index: 100;
     }
 }
 
@@ -362,7 +363,24 @@ header a:hover {
     right: 0;
     left: 0;
     display: none;
+    z-index: 60;
 }
+/* Overlays that close pop-ups on click */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    display: none;
+}
+#menu-overlay {
+    z-index: 90;
+}
+#modal-overlay {
+    z-index: 50;
+}
+
 /* Banner card with image background */
 #banner {
     border-radius: 20px;
