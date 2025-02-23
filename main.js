@@ -14,7 +14,7 @@ function displayTable(transactions) {
     
     for (let i = 0; i < transactions.length; i++){
         tableContent += `<tr>\n<td>${transactions[i].id}</td>\n<td>${transactions[i].type}</td>\n<td>${transactions[i].description}</td>\n<td>${transactions[i].amount.toLocaleString('en')}</td>\n
-        <td><button type="submit" onclick="deleteTransaction()" class="btn-danger">Delete</button></td>\n</tr>\n`
+        <td><button type="button" onclick="deleteTransaction(${transactions[i].id})" class="btn-danger">Delete</button></td>\n</tr>\n`
     }
     transactionTable.innerHTML = tableContent
 }
@@ -43,7 +43,14 @@ function addTransaction() {
     displayTable(transactions)
 }
 
-function deleteTransaction(transactions) {
+function deleteTransaction(transactionId) {
+    // Parse through array to find transaction with the set ID and delete it
+    for (let i=0; i < transactions.length; i++) {
+        if (transactions[i].id == transactionId) {
+            transactions.splice(i,1)
+        }
+    }
+    // Refresh the transactions table
     displayTable(transactions)
 }
 
