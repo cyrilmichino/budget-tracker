@@ -12,12 +12,14 @@ function displaySummary(transactions) {
     // Tabulate expenses, income, and balance
     let totalIncome = tally(transactions, 'income')
     let totalExpenses = tally(transactions, 'expense')
-    let balance = totalIncome - totalExpenses
+    let totalSavings = tally(transactions, 'savings')
+    let balance = totalIncome - totalExpenses - totalSavings
 
     // Display summary transaction data on web page
     document.getElementById('balance').innerHTML = balance.toLocaleString('en')
     document.getElementById('total-income').innerHTML = totalIncome.toLocaleString('en')
     document.getElementById('total-expenses').innerHTML = totalExpenses.toLocaleString('en')
+    document.getElementById('total-savings').innerHTML = totalSavings.toLocaleString('en')
 }
 
 function displayTable(transactions) {
@@ -98,7 +100,8 @@ function closeMenu() {
 
 
 let transactions = [{id:1, type: 'income', description: 'Random 1', amount: 2000}, {id:2, type: 'income', description: 'Random 2', amount: 3000}, {id:3, type: 'income', description: 'Random 3', amount: 4000},
-    {id:4, type: 'expense', description: 'Expense 1', amount: 1000}, {id:5, type: 'expense', description: 'Expense 2', amount: 2400}, {id:6, type: 'expense', description: 'Expense 3', amount: 2400}]
+    {id:4, type: 'expense', description: 'Expense 1', amount: 1000}, {id:5, type: 'expense', description: 'Expense 2', amount: 2400}, {id:6, type: 'expense', description: 'Expense 3', amount: 2400},
+    {id:7, type: 'savings', description: 'Monthly Savings', amount: 1000}]
 
 displaySummary(transactions)
 displayTable(transactions)

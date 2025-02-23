@@ -41,22 +41,22 @@
         <div id="dashboard" class="wrapper grid four-column">
             <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Balance</h2>
-                <p class="text-dark"><b>KES</b> <span class="text-large" id="balance">1000</span></p>
+                <p class="text-dark"><b>KES</b> <span class="text-large" id="balance">0</span></p>
                 <p class="text-light text-smallest">Total balance across your accounts</p>
             </div>
             <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Income</h2>
-                <p class="text-dark"><b>KES</b> <span class="text-large" id="total-income">3000</span></p>
+                <p class="text-dark"><b>KES</b> <span class="text-large" id="total-income">0</span></p>
                 <p class="text-light text-smallest">How much you have earned</p>
             </div>
             <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Expenses</h2>
-                <p class="text-dark"><b>KES</b> <span class="text-large" id="total-expenses">2000</span></p>
+                <p class="text-dark"><b>KES</b> <span class="text-large" id="total-expenses">0</span></p>
                 <p class="text-light text-smallest">How much you have spent</p>
             </div>
             <div class="card flex flex-direction-column space-evenly-small">
                 <h2 class="text-small text-accent">Savings</h2>
-                <p class="text-dark"><b>KES</b> <span class="text-large" id="total-savings">2,000</span></p>
+                <p class="text-dark"><b>KES</b> <span class="text-large" id="total-savings">0</span></p>
                 <p class="text-light text-smallest">Total balance in your savings</p>
             </div>
         </div>
@@ -88,8 +88,9 @@
                             Transaction Type<br>
                             <select name="type" id="type" class="full-width" required>
                                 <option value="">--Select one of --</option>
-                                <option value="expense">Expense</option>
                                 <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                                <option value="savings">Savings</option>
                             </select>
                         </label>
                         <label for="description" class="full-width">
