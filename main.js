@@ -8,6 +8,18 @@ function tally(arr, type) {
     return total
 }
 
+function displaySummary(transactions) {
+    // Tabulate expenses, income, and balance
+    let totalIncome = tally(transactions, 'income')
+    let totalExpenses = tally(transactions, 'expense')
+    let balance = totalIncome - totalExpenses
+
+    // Display summary transaction data on web page
+    document.getElementById('balance').innerHTML = balance.toLocaleString('en')
+    document.getElementById('total-income').innerHTML = totalIncome.toLocaleString('en')
+    document.getElementById('total-expenses').innerHTML = totalExpenses.toLocaleString('en')
+}
+
 function displayTable(transactions) {
     const transactionTable = document.getElementById('transactions')
     tableContent = `<tr>\n<th></th>\n<th scope="col">Type</th>\n<th scope="col">Description</th>\n<th scope="col">Amount</th>\n<th scope="col">Action</th>\n</tr>\n`
@@ -28,7 +40,7 @@ function addTransaction() {
     // Get form values from form input
     const type = inputType.value
     const description = inputDescription.value
-    const amount = inputAmount.value
+    const amount = Number(inputAmount.value)
 
     // Tabulate transaction ID and add form data to array
     const id = transactions[transactions.length - 1].id + 1
@@ -40,6 +52,7 @@ function addTransaction() {
     inputAmount.value = ""
 
     // Refresh the transactions table
+    displaySummary(transactions)
     displayTable(transactions)
 }
 
@@ -50,7 +63,8 @@ function deleteTransaction(transactionId) {
             transactions.splice(i,1)
         }
     }
-    // Refresh the transactions table
+    // Refresh the transactions table and summary
+    displaySummary(transactions)
     displayTable(transactions)
 }
 
@@ -66,12 +80,5 @@ function closeModal() {
 let transactions = [{id:1, type: 'income', description: 'Random 1', amount: 2000}, {id:2, type: 'income', description: 'Random 2', amount: 3000}, {id:3, type: 'income', description: 'Random 3', amount: 4000},
     {id:4, type: 'expense', description: 'Expense 1', amount: 1000}, {id:5, type: 'expense', description: 'Expense 2', amount: 2400}, {id:6, type: 'expense', description: 'Expense 3', amount: 2400}]
 
-let totalIncome = tally(transactions, 'income')
-let totalExpenses = tally(transactions, 'expense')
-let balance = totalIncome - totalExpenses
-
-document.getElementById('balance').innerHTML = balance.toLocaleString('en')
-document.getElementById('total-income').innerHTML = totalIncome.toLocaleString('en')
-document.getElementById('total-expenses').innerHTML = totalExpenses.toLocaleString('en')
-
+displaySummary(transactions)
 displayTable(transactions)
