@@ -76,6 +76,16 @@ function closeModal() {
 
 }
 
+function openMenu() {
+    const navbar = document.getElementById('main-nav')
+    navbar.style.right = '0';
+}
+
+function closeMenu() {
+    const navbar = document.getElementById('main-nav')
+    navbar.style.right = '100vh';
+}
+
 
 let transactions = [{id:1, type: 'income', description: 'Random 1', amount: 2000}, {id:2, type: 'income', description: 'Random 2', amount: 3000}, {id:3, type: 'income', description: 'Random 3', amount: 4000},
     {id:4, type: 'expense', description: 'Expense 1', amount: 1000}, {id:5, type: 'expense', description: 'Expense 2', amount: 2400}, {id:6, type: 'expense', description: 'Expense 3', amount: 2400}]
