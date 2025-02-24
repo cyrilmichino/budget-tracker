@@ -1,5 +1,5 @@
 # Budget Tracker
-### Zindua School – JavaScript Week 1 Porject
+### Zindua School – JavaScript Week 1 Project
 You are tasked with building a Budget Tracker using JavaScript. The application should allow users to track their expenses and income while calculating their total balance. This project focuses on JavaScript fundamentals, including variables, data types, operators, conditional statements, loops, functions, and event handling that you've covered so far.
 
 ## Budget Tracking Features
